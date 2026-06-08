@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class name {
+public class vowcont{
 
 
     public static void main(String[] args) {

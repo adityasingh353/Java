@@ -1,9 +1,11 @@
 
+
 import java.util.Scanner;
 
 import java.util.Scanner;
 public class palindrome {
-    public static void main(String[] args) {
+    public static void
+    main(String[] args) {
         int a=1;
         Scanner sc=new Scanner(System.in);
         String word =sc.next();
