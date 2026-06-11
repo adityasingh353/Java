@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+
 class Pair{
     int value;
     int index;
@@ -25,7 +27,7 @@ public class sumoftwo {
 
     }
     public static int[] TwopointerSum(int[] arr,int target){
-        //O(n) Time complexity
+        //O(nlogn) Time complexity
         int i=0;
         int j=arr.length-1;
         Pair[] pairs=new Pair[arr.length];
@@ -47,6 +49,20 @@ public class sumoftwo {
         return new int[] {-1,-1};
 
     }
+    public  static int[] Hashing(int[] arr,int target){
+        //O(n) time complexity/best method to solve
+        HashMap<Integer,Integer> m=new HashMap<>();
+        for (int i = 0; i <arr.length; i++) {
+            int first=arr[i];
+            int second=target-first;
+            if (m.containsKey(second)){
+                return new int[] {i,m.get(second)};
+            }
+            m.put(first,i);
+
+        }
+        return new int[] {-1,-1};
+    }
 
     public static void main(String[] args) {
         //nums = [2,7,11,15], target = 9
@@ -56,8 +72,10 @@ public class sumoftwo {
         //preserving index to get correct index of number after sorting
 
         int[] result2=TwopointerSum(list,7);
+        int[] result3=Hashing(list,17);
         System.out.println("the index are using bruteforce for target 9: "+ Arrays.toString(result1));
-        System.out.println("the index are using two point approch for targer 7: "+ Arrays.toString(result2));
+        System.out.println("the index are using two point approch for target 7: "+ Arrays.toString(result2));
+        System.out.println("the index are using Hashing approch for target 17: "+ Arrays.toString(result3));
 
     }
 }
