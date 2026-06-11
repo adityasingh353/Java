@@ -30,17 +30,18 @@ public class sumoftwo {
         int j=arr.length-1;
         Pair[] pairs=new Pair[arr.length];
         for (int k = 0; k <arr.length; k++) {
-            pairs[k]=new Pair(k,arr[i]);
+            pairs[k]=new Pair(k,arr[k]);
         }
         Arrays.sort(pairs,(a,b)->a.value-b.value);
         while (i<j){
-            if(arr[i]+arr[j]==target){
+            if(pairs[i].value+pairs[j].value==target){
                 return new int[] {pairs[i].index,pairs[j].index};
-            }if(arr[i]+arr[j]<target){
+            }if(pairs[i].value+pairs[j].value<target){
                 i++;
-            }if(arr[i]+arr[j]>target){
+            }if(pairs[i].value+pairs[j].value>target){
                 j--;
             }
+
 
         }
         return new int[] {-1,-1};
@@ -50,13 +51,13 @@ public class sumoftwo {
     public static void main(String[] args) {
         //nums = [2,7,11,15], target = 9
 
-        int[] list={2,7,11,15,8};
+        int[] list={2,7,11,15,8,5};
         int[] result1=Bruteforce(list,9);
         //preserving index to get correct index of number after sorting
 
-        int[] result2=TwopointerSum(list,10);
+        int[] result2=TwopointerSum(list,7);
         System.out.println("the index are using bruteforce for target 9: "+ Arrays.toString(result1));
-        System.out.println("the index are using two point approch for targer 10: "+ Arrays.toString(result2));
+        System.out.println("the index are using two point approch for targer 7: "+ Arrays.toString(result2));
 
     }
 }
