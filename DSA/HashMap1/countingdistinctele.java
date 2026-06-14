@@ -28,7 +28,7 @@ public class countingdistinctele {
             hs.add(arr[i]);
 
         }
-        System.out.println("Total unique item:"+hs.size());
+        System.out.println("Total unique items::"+hs.size());
 
     }
 }
