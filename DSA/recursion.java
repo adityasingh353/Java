@@ -35,6 +35,12 @@ public class recursion {
         Print_num2(num-1);
         System.out.println(num);
     }
+    static int count_dig(int num){
+        if(num==0){
+            return 0;
+        }
+        return 1+count_dig(num/10);
+    }
 
 
 
@@ -43,7 +49,8 @@ public class recursion {
         //System.out.println(fact(3));
         //System.out.println(power(2,3));
         //Print_Numbers(1,5);
-        Print_num2(5);
+        //Print_num2(5);
+        System.out.println(count_dig(1565));
 
     }
 }
