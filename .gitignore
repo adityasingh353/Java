@@ -1,5 +1,14 @@
+# IntelliJ
 .idea/
-*.class
 *.iml
-*.idea
-*.xml
+
+# Java
+*.class
+out/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
